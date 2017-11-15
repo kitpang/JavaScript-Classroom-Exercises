@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head></head>
+
+<body>
+    <h1> Guess the Number!</h1>
+    <p>Please enter a number between 0 and 10</p>
+    <form>
+        <input type="number" id="input1" />
+
+    </form>
+    <div><button id="button1">Number</button></div><br>
+    <div id="demo"></div>
+
+    <script>
+        var event1 = document.getElementById("button1");
+
+        event1.addEventListener("click", myFunction, false);
+
+        var randomNumber = Math.random() * 10;
+        var mysteryNumber = Math.round(randomNumber);
+        var count = 0;
+
+        function myFunction() {
+
+            var guess = parseInt(document.getElementById("input1").value);
+
+            if (guess < mysteryNumber) {
+
+                count += 1;
+
+                document.getElementById("demo").innerHTML = guess + " is too small and the number of times you have guessed is " + count;
+            } else if (guess > mysteryNumber) {
+
+                count += 1;
+
+                document.getElementById("demo").innerHTML = guess + " is too big and the number of times you have guessed is " + count;
+
+            } else if (guess == mysteryNumber) {
+
+                document.getElementById("demo").innerHTML = "Well done - correct guess and the number of times you have guessed is " + count;
+            }
+
+
+
+        }
+
+    </script>
+
+</body>
+
+</html>

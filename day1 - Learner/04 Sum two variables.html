@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <p>Please enter 2 numbers below</p>
+    <form>
+        <input type="number" id="input1" />
+        <input type="number" id="input2" />
+    </form>
+    <div><button id="button1">Sum of the two numbers</button></div><br>
+    <div id="demo"></div>
+
+    <script>
+
+        var event1 = document.getElementById("button1");
+
+        event1.addEventListener("click", sumTwoNumbers, false);
+
+        function sumTwoNumbers() {
+
+            var userInput1 = document.getElementById("input1").value;
+            var userInput2 = document.getElementById("input2").value;
+
+            var userInput = parseInt(userInput1 + userInput2);
+
+            document.getElementById("demo").innerHTML = userInput;
+        }
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Second Page - Web Storage</title>
+
+    </head>
+
+    <body>
+
+        <h1>Second Page - Web Storage Demo</h1>
+
+
+
+    </body>
+
+    <script>
+
+        document.write("<h1>Hi " + localStorage.username + "</h1>");
+
+    /*    document.write("<h1>Hi " + sessionStorage.username + "</h1>");*/
+
+        document.write("<h1>From " + localStorage.country + "</h1>");
+
+        document.write("<h1>My favourite colour is " + localStorage.colour + "</h1>");
+
+        document.write("<h1>" + localStorage.length + "</h1>");
+
+        /* MN: keys are sorted in alphabetical order when stored */
+        document.write("<h1>" + localStorage.key(2)+ "</h1>");
+
+        document.write("<h1>" + localStorage.getItem("colour") + "</h1>");
+
+        /* can be combined with a for loop */
+        document.write("<h1>" + localStorage.getItem(localStorage.key(0)) + "</h1>");
+
+    </script>
+
+</html>
+
+
+
