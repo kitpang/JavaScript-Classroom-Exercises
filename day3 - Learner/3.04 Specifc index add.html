@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript specific index add</title>
+
+</head>
+
+<body>
+    <h1>Javascript</h1>
+    <h2>Add to an array at a specific index point in the array</h2>
+    <input id="input" type="text" placeholder="Input" />
+    <input id="position" type="number" placeholder="position" default=0/>
+    <button type="button" id=button>Add to array</button>
+    <p id="myarray"></p>
+    <br>
+    <p id="myarray2"></p>
+
+    <script>
+        event1 = document.getElementById(button);
+        button.addEventListener("click", specificAdd, false);
+        var array = [];
+
+        function specificAdd() {
+            var userInput = document.getElementById("input").value;
+            var userPosition = document.getElementById("position").value;
+            
+            //MN: splice works as the following: cut at userPosition, delete 0 items, adds userInput at the cut
+            array.splice(userPosition, 0, userInput);
+            
+            document.getElementById("myarray").innerHTML = array;
+
+        }
+    </script>
+
+
+</body>
+
+</html>

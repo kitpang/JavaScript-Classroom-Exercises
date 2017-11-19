@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript - Array Length</title>
+
+</head>
+
+<body>
+    <h1>Javascript - Arrays, Array length</h1>
+    <h2>Array Length</h2>
+    <input id="input1" />
+    <input id="button" type="button" value="Push value to array" />
+    <!--onclick="addtoarray(input1.value)" />-->
+    <p id="result"></p>
+    <p id="lengthcounter"></p>
+
+    <script>
+        event1 = document.getElementById(button);
+        button.addEventListener("click", myFunction, false);
+        var addtoarray = [];
+
+        function myFunction() {
+
+            var userInput = document.getElementById("input1").value;
+
+
+
+            addtoarray.push(userInput);
+
+            var arrayLength = addtoarray.length;
+
+            document.getElementById("result").innerHTML = addtoarray;
+            document.getElementById("lengthcounter").innerHTML = arrayLength;
+
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript pop element from array</title>
+
+</head>
+
+<body>
+    <h1>Javascript labs</h1>
+    <h2>Lab 22 - Pop element from array</h2>
+    <input id="lab22input" />
+    <!--  add element to end of array -->
+    <input type="button" value="Push member to array" id="pushButton" />
+    <!--  remove last element of the array -->
+    <input type="button" value="Pop member from array" id="popButton" />
+    <!--  remove the first element of the array -->
+    <input type="button" value="Shift member from array" id="shiftButton" />
+    <!--  add to the first element of the array -->
+    <input type="button" value="Shift member to array" id="unshiftButton" />
+
+    <p id="lab22result"></p>
+    <p id="lab22resultArray"></p>
+
+    <script>
+        event1 = document.getElementById(pushButton);
+        pushButton.addEventListener("click", push, false);
+
+        event2 = document.getElementById(popButton);
+        popButton.addEventListener("click", pop, false);
+
+        event3 = document.getElementById(shiftButton);
+        shiftButton.addEventListener("click", shift, false);
+
+        event4 = document.getElementById(unshiftButton);
+        unshiftButton.addEventListener("click", unshift, false);
+
+        var array = [];
+
+        function push() {
+            var userInput = document.getElementById("lab22input").value;
+            var result = array.push(userInput);
+            document.getElementById("lab22result").innerHTML = result;
+            document.getElementById("lab22resultArray").innerHTML = array;
+        }
+
+        function pop() {
+            var userInput = document.getElementById("lab22input").value;
+            var result = array.pop(userInput);
+            document.getElementById("lab22result").innerHTML = result;
+            document.getElementById("lab22resultArray").innerHTML = array;
+        }
+
+        function shift() {
+            var userInput = document.getElementById("lab22input").value;
+            var result = array.shift(userInput);
+            document.getElementById("lab22result").innerHTML = result;
+            document.getElementById("lab22resultArray").innerHTML = array;
+        }
+
+        function unshift() {
+            var userInput = document.getElementById("lab22input").value;
+            var result = array.unshift(userInput);
+            document.getElementById("lab22result").innerHTML = result;
+            document.getElementById("lab22resultArray").innerHTML = array;
+        }
+    </script>
+
+</body>
+
+</html>
