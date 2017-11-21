@@ -11,9 +11,9 @@ var dAnswerId;
 
 var dValueId;
 
-/*
+
 var dClassId;
-*/
+
 
 var dQuestionsId;
 
@@ -69,8 +69,8 @@ function dragStart(ev) {
     dValueId = "a" + ev.target.getAttribute("value");
     //console.log("dValueId: " + dValueId);
 
-    /*    dClassId = ev.target.getAttribute("class");
-        console.log("dClassId: " + dClassId);*/
+       dClassId = ev.target.getAttribute("class");
+        console.log("dClassId: " + dClassId);
 
 }
 
@@ -82,6 +82,14 @@ function dragOver(ev) {
 function dragDrop(ev) {
 
     ev.preventDefault();
+
+    //This is to solve the over stacking issue
+
+    if(!ev.target.getAttribute("ondrop")) {
+
+        return false;
+    }
+
 
     var data = ev.dataTransfer.getData("text");
 
@@ -100,11 +108,15 @@ function dragDrop(ev) {
 
 
     //MN: This if statement exist because the boxes stuck on top of each other. Valid drag and drops are from left to right and right to left. The valid drag and drop key characteristics were used as the condition for the if statement.
-    if (((ev.target.attributes[0].value[0]) == "a" && ev.target.attributes.length === 4) || ((ev.target.attributes[0].value[0]) == "r" && ev.target.attributes.length === 5)) {
+/*    if (((ev.target.attributes[0].value[0]) == "a" && ev.target.attributes.length === 4) || ((ev.target.attributes[0].value[0]) == "r" && ev.target.attributes.length === 5)) */
+
+    {
 
         ev.target.appendChild(document.getElementById(data));
 
-        if (dQuestionsId[0] == "r") {
+       /* if (dQuestionsId[0] == "r") {*/
+
+        if (ev.target.getAttribute("name") === "answers") {
 
             document.getElementById(dAnswerId).className = "theAnswers";
 
